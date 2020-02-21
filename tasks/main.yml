@@ -1,0 +1,6 @@
+---
+- name: ensure node-exporter
+  block:
+    - import_tasks: package.yml
+  tags:
+    - node-exporter

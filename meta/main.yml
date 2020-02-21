@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  role_name: node-exporter
+  author: Roman Kuzmitskii
+  description: node-exporter role
+  license: GPLv2
+  min_ansible_version: 2.8
+  galaxy_tags:
+    - agent
+    - exporter
+    - metrics
+    - monitoring
+    - node_exporter
+    - prometheus
+    - system
+  platforms:
+    - name: "Debian"
+      versions:
+        - "buster"
+dependencies:
+  - role: "damex.package"

@@ -1,0 +1,8 @@
+---
+- name: ensure node-exporter package
+  include_role:
+    name: "damex.package"
+  vars:
+    package_packages:
+      - name: "{{ node_exporter_package_name }}"
+        state: "{{ node_exporter_package_state }}"
