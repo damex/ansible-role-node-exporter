@@ -1,5 +1,6 @@
 ---
-node_exporter_prometheus_hosts: []
 node_exporter_package_name: "prometheus-node-exporter"
 node_exporter_package_state: "present"
 node_exporter_web_listen_port: 9100
+node_exporter_prometheus_file_sd_target_name: "node-exporter"
+node_exporter_prometheus_file_sd_target_port: 9100
