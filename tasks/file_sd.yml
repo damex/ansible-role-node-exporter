@@ -1,7 +1,7 @@
 ---
 - name: ensure prometheus file sd
   include_role:
-    name: "ansible-role-prometheus-file-sd"
+    name: "damex.prometheus_file_sd"
   vars:
     prometheus_file_sd_target_name: |-
       {{ node_exporter_prometheus_file_sd_target_name }}
