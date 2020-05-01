@@ -2,5 +2,7 @@
 - name: ensure node-exporter
   block:
     - import_tasks: package.yml
+    - import_tasks: directory.yml
+    - import_tasks: systemd.yml
   tags:
     - node-exporter

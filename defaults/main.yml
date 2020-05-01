@@ -2,4 +2,13 @@
 node_exporter_package_name: "prometheus-node-exporter"
 node_exporter_package_version: ""
 node_exporter_package_state: "present"
-node_exporter_web_listen_port: 9100
+node_exporter_user: "prometheus"
+node_exporter_group: "prometheus"
+node_exporter_service_name: "prometheus-node-exporter"
+node_exporter_systemd_dir: >-
+  /etc/systemd/system/{{ node_exporter_service_name }}.service.d
+node_exporter_systemd_file: "{{ node_exporter_systemd_dir }}/custom.conf"
+node_exporter_binary: "/usr/bin/prometheus-node-exporter"
+node_exporter_log_level: "info"
+node_exporter_web_listen_address: "0.0.0.0:9100"
+node_exporter_web_telemetry_path: "/metrics"

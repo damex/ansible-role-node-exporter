@@ -1,0 +1,29 @@
+---
+- name: ensure systemd
+  block:
+    - name: ensure systemd configuration
+      template:
+        src: "systemd.service.j2"
+        dest: "{{ node_exporter_systemd_file }}"
+        owner: "root"
+        group: "root"
+        mode: 0644
+      register: node_exporter_systemd_file
+    - name: ensure systemd configuration is reloaded
+      systemd:
+        daemon_reload: true
+      when: node_exporter_systemd_file.changed
+    - name: ensure node-exporter service is enabled
+      systemd:
+        name: "{{ node_exporter_service_name }}"
+        enabled: true
+    - name: ensure node-exporter service is started
+      systemd:
+        name: "{{ node_exporter_service_name }}"
+        state: "started"
+    - name: ensure node-exporter service is restarted
+      systemd:
+        name: "{{ node_exporter_service_name }}"
+        state: "restarted"
+      when: node_exporter_systemd_file.changed
+  become: true

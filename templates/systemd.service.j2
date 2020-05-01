@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+[Service]
+User={{ node_exporter_user }}
+Group={{ node_exporter_group }}
+ExecStart=
+ExecStart={{ node_exporter_binary }} \
+  --log.level={{ node_exporter_log_level }} \
+  --web.listen-address="{{ node_exporter_web_listen_address }}" \
+  --web.telemetry-path="{{ node_exporter_web_telemetry_path }}"
