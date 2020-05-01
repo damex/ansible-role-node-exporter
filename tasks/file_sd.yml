@@ -1,9 +1,0 @@
----
-- name: ensure prometheus file sd
-  include_role:
-    name: "damex.prometheus_file_sd"
-  vars:
-    prometheus_file_sd_target_name: |-
-      {{ node_exporter_prometheus_file_sd_target_name }}
-    prometheus_file_sd_target_port: |-
-      {{ node_exporter_prometheus_file_sd_target_port }}
