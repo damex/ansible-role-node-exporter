@@ -5,4 +5,5 @@
   vars:
     package_packages:
       - name: "{{ node_exporter_package_name }}"
+        version: "{{ node_exporter_package_version }}"
         state: "{{ node_exporter_package_state }}"
