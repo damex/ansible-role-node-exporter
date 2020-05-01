@@ -19,4 +19,3 @@ galaxy_info:
         - "buster"
 dependencies:
   - role: "damex.package"
-  - role: "damex.prometheus_file_sd"
