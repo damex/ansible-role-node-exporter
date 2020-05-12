@@ -10,7 +10,7 @@ galaxy_info:
     - exporter
     - metrics
     - monitoring
-    - node_exporter
+    - node
     - prometheus
     - system
   platforms:
